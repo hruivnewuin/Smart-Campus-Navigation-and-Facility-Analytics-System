@@ -97,9 +97,26 @@ DepartmentLoadResult DepartmentTree::loadFromFile(const std::string& path, const
       }
     }
     else if (equalsIgnoreCase(f[1], "NONE")) {
-      
+      reason = "Only the first department may use parent NONE";
     }
-
-
+    else if (findMutable(f[1]) == nullptr) {
+      reason = "unknown parent '" + f[1] + "' must be accepted on an earlier line";
+    }
+    if (!reason.empty()) {
+      std::cout << "Warning: " << displayName << " line " << lineNo << ": " << reason << " - record rejected.\n";
+      ++result.rejected;
+      continue;
+    }
+    std::string err;
+    bool ok = (root_ == nullptr) ? addRoot(f[0], err) : addChild(f[0], f[1], err);
+    if (ok) ++result.accepted;
+    else {
+      std::cout << "Warning: " << displayName << " line " << lineNo << ": " << err << " - record rejected.\n";
+      ++result.rejected;
+    }
+  }
+  std::cout << displayName << ": " << result.accepted << " accepted, " << result.rejected << " rejected\n";
+  return result;
+}
 
     
