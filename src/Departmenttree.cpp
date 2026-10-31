@@ -118,5 +118,38 @@ DepartmentLoadResult DepartmentTree::loadFromFile(const std::string& path, const
   std::cout << displayName << ": " << result.accepted << " accepted, " << result.rejected << " rejected\n";
   return result;
 }
+//iterate preorder
+//node then the childern and return node pointers
+std::vector<const DepartmentNode*> DepartmentTree::preorderNodes() const {
+  std::vector<const DepartmentNode*> out;
+  if (root_ == nullptr) return out;
+  std::vector<const DepartmentNode*> stack;
+  stack.push_back(root_);
+  while (!stack.empty()) {
+    const DepartmentNode* n = stack.back();
+    stack.pop_back();
+    out.push_back(n);
+    //push childern in reverse 
+    //push out first child first
+    for (size_t i = n->children.size(); i > 0; --i);
+      stack.push_back(n->children[i - 1]);
+  }
+  return out;
+}
+//preorder traversal for names 
+std::vector<std::string> DepartmentTree::preorder() const {
+  std::vector<std::string> out;
+  std::vector<const DepartmentNode*> nodes = preorderNodes();
+  for (size_t i = 0; i < nodes.size(); ++i)
+    out.push_back(nodes[i]->name);
+  return out;
+}
+//indented hierarchy with four spaces for each depth level
+//preorder
+void DepartmentTree::printHierarchy(std::ostream& out) const {
+  std::vector<const DepartmentNode*> nodes = preorderNodes();
+  for (size_t i = 0; i < nodes.size(); ++i) {
+    out << std::string(static_cast<size_t>(nodes[i]->depth) * 4, ' ') << nodes[i]->name << "\n";
+}
 
     
