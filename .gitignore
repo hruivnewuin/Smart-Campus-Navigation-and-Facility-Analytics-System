@@ -1,0 +1,14 @@
+# build
+a.out
+*.exe
+*.out
+campus
+*.o
+*.obj
+
+#editor files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
