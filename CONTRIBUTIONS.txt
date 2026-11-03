@@ -1,11 +1,12 @@
 Format: Date | Name | commit contribution |
 
-10/28 | Faith Paredes | Departmenttree.h 
-10/29 | Faith Paredes | Departmenttree.cpp
-11/02 | Faith Paredes | Departmentmenu.h
-11/02 | Faith Paredes | Departmentmenu.cpp
-11/02 | Faith Paredes | Stringutils.h
+10/28 | Faith Paredes | create Departmenttree.h 
+10/29 | Faith Paredes | create Departmenttree.cpp
+11/02 | Faith Paredes | create Departmentmenu.h
+11/02 | Faith Paredes | create Departmentmenu.cpp
+11/02 | Faith Paredes | create Stringutils.h
 11/03 | Faith Paredes | added data/ files (buildings.txt, connections.txt, departments.txt, and facilities.txt)
-11/03 | Faith Paredes | Departmenttest.txt
+11/03 | Faith Paredes | create Departmenttest.txt
 11/03 | Faith Paredes | create CONTRIBUTIONS.txt
 11/03 | Faith Paredes | write in the README.txt
+11/03 | Faith Paredes | create .gitignore 
