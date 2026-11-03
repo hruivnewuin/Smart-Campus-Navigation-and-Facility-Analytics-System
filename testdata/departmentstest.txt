@@ -1,0 +1,12 @@
+  University  |  NONE
+College of Engineering|University
+College of science|UNIVERSITY
+Computer Science|college of engineering
+Electrical Engineering|College of Engineering
+Mathematics|College of Science
+Physics|College of Science
+Biology
+University|NONE
+Chemistry|PHYSICS
+|University
+Chemistry|
