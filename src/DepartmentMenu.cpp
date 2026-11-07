@@ -65,7 +65,7 @@ void menuSearchDepartment(const DepartmentTree& tree) {
     }
     return;
   }
-  std::cout "Department: " << info.name << "\n" << "Parent: " << info.parentName << "\n" << "Direct children: " << info.childCount << "\n" << "Depth: " << info.depth << "\n";
+  std::cout << "Department: " << info.name << "\n" << "Parent: " << info.parentName << "\n" << "Direct children: " << info.childCount << "\n" << "Depth: " << info.depth << "\n";
 }
 //indented hierarchy view
 void menuDisplayHierarchy(const DepartmentTree& tree) {
