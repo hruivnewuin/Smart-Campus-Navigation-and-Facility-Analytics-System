@@ -9,7 +9,7 @@ using StringUtils::trim;
 DepartmentTree::DepartmentTree() : root_(nullptr) {}
 //nodes_ is creates and destroys the node objects
 DepartmentTree::~DepartmentTree() {
-  for (size_t i = 0; i < nodes_.sizes(); ++i) delete nodes_[i];
+  for (size_t i = 0; i < nodes_.size(); ++i) delete nodes_[i];
   nodes_.clear();
   root_ = nullptr;
 }
@@ -26,14 +26,14 @@ DepartmentNode* DepartmentTree::findMutable(const std::string& name) const {
   return nullptr;
 }
 //public const lookup
-const DepartmentNode* DepartmentTree::find(const std::string& name const {
+const DepartmentNode* DepartmentTree::find(const std::string& name) const {
   return findMutable(name);
 }
 
 //makes a department under an existing parent
-bool DepartmentTree::addChild(const std::string& name, const std::string& parent Name, std::string& error) {
-  std::string n + trim(name);
-  std::string p + trim(parentName);
+bool DepartmentTree::addChild(const std::string& name, const std::string& parentName, std::string& error) {
+  std::string n = trim(name);
+  std::string p = trim(parentName);
   if (n.empty()) { error = "department name is empty"; return false; }
   if (p.empty()) { error = "parent name is empty"; return false; }
   if (findMutable(n) != nullptr) {
@@ -150,6 +150,6 @@ void DepartmentTree::printHierarchy(std::ostream& out) const {
   std::vector<const DepartmentNode*> nodes = preorderNodes();
   for (size_t i = 0; i < nodes.size(); ++i) {
     out << std::string(static_cast<size_t>(nodes[i]->depth) * 4, ' ') << nodes[i]->name << "\n";
+  }
 }
-
     
