@@ -29,7 +29,15 @@ DepartmentNode* DepartmentTree::findMutable(const std::string& name) const {
 const DepartmentNode* DepartmentTree::find(const std::string& name) const {
   return findMutable(name);
 }
-
+//create root department
+bool DepartmentTree::addRoot(const std::string& name, std::string& error) {
+  std::string n = trim(name);
+  if (n.empty()) { error = "department name is empty"; return false; }
+  if (root_ != nullptr) { error = "tree already has a root"; return false; }
+  root_ = new DepartmentNode(n, nullptr, 0);
+  nodes_.push_back(root_);
+  return true;
+}
 //makes a department under an existing parent
 bool DepartmentTree::addChild(const std::string& name, const std::string& parentName, std::string& error) {
   std::string n = trim(name);
@@ -131,7 +139,7 @@ std::vector<const DepartmentNode*> DepartmentTree::preorderNodes() const {
     out.push_back(n);
     //push childern in reverse 
     //push out first child first
-    for (size_t i = n->children.size(); i > 0; --i);
+    for (size_t i = n->children.size(); i > 0; --i)
       stack.push_back(n->children[i - 1]);
   }
   return out;
