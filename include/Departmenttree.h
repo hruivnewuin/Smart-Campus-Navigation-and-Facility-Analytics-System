@@ -8,7 +8,7 @@
 struct DepartmentNode {
   std::string name; //spelling comes from the first accepted record
   DepartmentNode* parent; // nullptr the root
-  std::vector<DepartmentNode*> childern; // any number of childern
+  std::vector<DepartmentNode*> children; // any number of children
   int depth; //root is 0 and this is for the edge from root
 
   DepartmentNode(const std::string& n, DepartmentNode* p, int d) : name(n), parent(p), depth(d) {}
