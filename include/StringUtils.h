@@ -3,6 +3,9 @@
 #include <string>
 #include <vector>
 
+//Purpose: Works as a shared text helper - Made by Faith Paredes
+
+
 namespace StringUtils {
 //remove leading/trailing whitespace
 inline std::string trim(const std::string& s) {
