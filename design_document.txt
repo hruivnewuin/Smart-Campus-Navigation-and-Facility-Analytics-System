@@ -1,0 +1,18 @@
+Member C (Faith Paredes): 
+The Department node represents one department, it stores the name, a pointer to its parent node, a list of child pointers, and it includes the depth. 
+The root of the tree has no parent and is placed at a depth of 0.
+The DepartmentTree file manages the hierarchy. 
+It loads data from the data file and extracts departments.txt. 
+Afterwards, It adds new departments using a search by name and then it creates a preorder traversal and an indented dierarchy.
+The DepartmentMenu controls the menu interface that uses searching, displaying, and preorder.
+The StringUtils helps with string text, it trims whitespace, helps compare text without the conflict of capitalization, and it helps with the pipe formatting.
+The code uses a general tree so there is no limit to the amount of children a node can have.
+Each node stores its children in a vector of pointers.
+This also helps the sibling nodes stay in order of when they were added.
+The tree keeps every node, then the destructor frees all the nodes using a loop.
+The preorder traversal uses stack, this helps prevent overflow.
+When using departments.txt, the first valid line become the root.
+When it becomes root its parent is called as "NONE."
+Every department after has to name a parent from an earlier line, and its name has to be unique. 
+If a line breaks a rule then it is rejected and given a warning display that shows filename, line number, and reason.
+In the case a tree is empty, the menu goes on and creates a root without asking for a parent.
