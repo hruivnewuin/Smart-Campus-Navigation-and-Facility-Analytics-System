@@ -9,7 +9,7 @@ TEAM MEMBERS
 
 PROJECT STRUCTURE
 -----------------
-Project1/
+Project2/
   include/    -- Header Files (class declarations) --
   src/         -- Implementation Files & main.cpp --
   testdata/
