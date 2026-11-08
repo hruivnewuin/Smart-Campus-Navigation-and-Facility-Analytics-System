@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+//Purpose: It prompts and puts out outputs for the department menu options - Made by Faith Paredes
+
 //prompt for a name, it will return false if blank
 static bool promptName(const std:: string& prompt, const std::string& what, std::string& out) {
   std::cout << prompt;
