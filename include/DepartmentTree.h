@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+//Purpose: Its the general tree for the department hierarchy - Made by Faith Paredes
+
 //In this department, it has things sorted in insertion order
 struct DepartmentNode {
   std::string name; //spelling comes from the first accepted record
