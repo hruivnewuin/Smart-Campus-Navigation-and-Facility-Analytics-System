@@ -5,6 +5,8 @@
 using StringUtils::equalsIgnoreCase;
 using StringUtils::trim;
 
+//Purpose: Used for department tree loading, adding, search, preorder, and hierarchy display - Made by Faith Paredes
+
 //create an empty tree
 DepartmentTree::DepartmentTree() : root_(nullptr) {}
 //nodes_ is creates and destroys the node objects
