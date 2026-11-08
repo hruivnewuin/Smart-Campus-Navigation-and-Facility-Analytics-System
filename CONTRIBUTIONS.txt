@@ -10,3 +10,4 @@ Format: Date | Name | commit contribution |
 11/03 | Faith Paredes | create CONTRIBUTIONS.txt
 11/03 | Faith Paredes | write in the README.txt
 11/03 | Faith Paredes | create .gitignore 
+11/07 | Faith Paredes | create  design_document.txt and add design summary
