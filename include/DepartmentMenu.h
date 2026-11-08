@@ -2,6 +2,9 @@
 #define DEPARTMENT_MENU_H
 #include "DepartmentTree.h"
 
+//Purpose: Holds the menu handlers for the department menu options - Made by Faith Paredes
+
+
 // contains declarations for menu handlers that are manage the tree department options
 void menuAddDepartment(DepartmentTree& tree);
 void menuSearchDepartment(const DepartmentTree& tree);
