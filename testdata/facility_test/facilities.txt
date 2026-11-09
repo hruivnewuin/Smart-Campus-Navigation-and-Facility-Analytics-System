@@ -1,0 +1,8 @@
+# FacilityID|FacilityName|BuildingName|Category
+F001|Main Reading Room|Library|Library
+F002|Tutoring Center|Library|Tutoring Center
+F012|Quiet Study Pod|Library|Library
+f001|Duplicate Reading Room|Library|Library
+BADID|Invalid ID Room|Library|Library
+F003|Ghost Room|Unknown Building|Classroom
+F004||Library|Classroom
