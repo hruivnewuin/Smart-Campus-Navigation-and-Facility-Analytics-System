@@ -10,13 +10,13 @@ Author: Caleb D
 
 struct Facility{
   std::string id; //creating ID
-  std::string name // Creating name for the facility names
-  std::string building // For building spellings
-  std::string category // For facility category
+  std::string name; // Creating name for the facility names
+  std::string building; // For building spellings
+  std::string category; // For facility category
 
 Facility(){}
 
-Facility(const std::string& id, const std::string& name, const std::String& building, const std::string& category): id(id), name(name), building(building), category(category){}
+Facility(const std::string& id, const std::string& name, const std::string& building, const std::string& category): id(id), name(name), building(building), category(category){}
 };
 
 #endif // FACILITY_H
