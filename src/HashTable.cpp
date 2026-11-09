@@ -13,7 +13,7 @@ HashTable::HashTable(int cap)
 int HashTable::hashFunction(const std::string& key) const{
   unsigned long hashValue = 0;
   for (size_t i = 0; i < key.length(); i++){
-    unsigned char c = static_cast<unsigned char>(std::toupper(key[i])));
+    unsigned char c = static_cast<unsigned char>(std::toupper(key[i]));
     hashValue = (hashValue * 31UL) + c;
   }
     return static_cast<int>(hashValue % static_cast<unsigned long>(capacity));
