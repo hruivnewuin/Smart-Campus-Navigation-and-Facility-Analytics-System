@@ -27,7 +27,7 @@ bool HashTable::contains(const std::string& normalizedKey) const{
 // Inserts a facility record
 bool HashTable::insert(const Facility& facility){
   int index = hashFunction(facility.id);
-  std::vector<Facility>& chain == buckets[index];
+  std::vector<Facility>& chain = buckets[index];
 
 // Checks for duplicate ID
 for (size_t i =0; i < chain.size(); i++){
