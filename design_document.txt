@@ -1,3 +1,8 @@
+Member A (Caleb Djan):
+  The Facility module is all about keeping track of campus facility records and making it easy to find IDs with a special ID hash table. Each facility is represented by a Facility struct, which holds the facility ID in uppercase (like "F001"), the name of the facility, the main building name, and its category. The records are kept in a std::vector<Facility> for order and also in a custom HashTable for quick ID searches.
+  To create the hash, we trim any extra spaces and make the facility ID uppercase, using a polynomial rolling hash with a multiplier of 31 to figure out the hash value, which helps us map to bucket indices.
+  When there are collisions, the hash table handles it by using Separate Chaining with a series of buckets, starting with a default capacity of 11. We also check for duplicate IDs while loading the facilities from facilities.txt, so we avoid insertion issues. A collision is counted whenever a new facility hashes to a bucket that already has entries. Once everything's loaded, the FacilityManager gives a summary of the total entries and any collisions that happened.
+
 Member C (Faith Paredes): 
 The Department node represents one department, it stores the name, a pointer to its parent node, a list of child pointers, and it includes the depth. 
 The root of the tree has no parent and is placed at a depth of 0.
