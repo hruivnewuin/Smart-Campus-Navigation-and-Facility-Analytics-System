@@ -14,3 +14,5 @@ Format: Date | Name | commit contribution |
 11/08 | Caleb Djan | Create Facility.h
 11/08 | Isiah Ndanzia | Create CampusGraph.cpp
 11/08 | Isiah Ndanzia | Create CampusGraph.h
+11/08 | Caleb Djan | Create HashTable.h (Declaring custom ID hash table)
+11/08 | Caleb Djan | Create HashTable.cpp (implement custom hash function, separate chaining, &collision diagnostics)
