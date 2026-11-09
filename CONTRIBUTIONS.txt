@@ -19,3 +19,5 @@ Format: Date | Name | commit contribution |
 11/08 | Caleb Djan | create FacilityManager.h
 11/08 | Caleb Djan | create FacilityManager.cpp
 11/08 | Caleb Djan | create facilities.txt for collision and validation testing
+11/08 | Caleb Djan | update design_document.txt with Member A summary
+11/08 | Caleb Djan | create main.cpp integrating FacilityManager, CampusGraph, and DepartmentTree
