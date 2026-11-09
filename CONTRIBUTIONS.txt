@@ -18,3 +18,4 @@ Format: Date | Name | commit contribution |
 11/08 | Caleb Djan | Create HashTable.cpp 
 11/08 | Caleb Djan | create FacilityManager.h
 11/08 | Caleb Djan | create FacilityManager.cpp
+11/08 | Caleb Djan | create facilities.txt for collision and validation testing
