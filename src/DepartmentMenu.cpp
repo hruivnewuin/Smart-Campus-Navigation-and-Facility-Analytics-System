@@ -78,6 +78,24 @@ void menuDisplayHierarchy(const DepartmentTree& tree) {
 void menuPreorder(const DepartmentTree& tree) {
   printSequence("Preorder traversal", tree.preorder());
 }
+
+//postorder sequence
+void menuPostorder(const DepartmentTree& tree) {
+  printSequence("Postorder traversal", tree.postorder());
+}
+
+//level order sequence
+void menuLevelOrder(const DepartmentTree& tree) {
+  printSequence("Level Order traversal", tree.LevelOrder());
+}
+
+void menuDepartmentStatistics(const DepartmentTree& tree) {
+  if (tree.isEmpty()) {
+    std::cout << "No departments are loaded.\n" << "Total departments: 0\n" << "Leaf departments: 0\n" << "Tree height: n/a\n";
+    return;
+  }
+  std::cout << "Total departments: " << tree.size() << "\n" << "Leaf departments: " << tree.countLeaves() << "\n" << "Tree height: " << tree.height() << "\n";
+}
     
 
 
