@@ -2,6 +2,8 @@
 #include "StringUtils.h"
 #include <fstream>
 #include <iostream>
+#include <algorithm>
+#include <queue>
 using StringUtils::equalsIgnoreCase;
 using StringUtils::trim;
 
@@ -154,6 +156,39 @@ std::vector<std::string> DepartmentTree::preorder() const {
     out.push_back(nodes[i]->name);
   return out;
 }
+//post order traversal 
+std::vector<std::string> DepartmentTree::postorder() const {
+  std::vector<std::string> out;
+  if (root_ == nullptr) return out;
+  std::vector<const DepartmentNode*> stack;
+  stack.push_back(root_);
+  while (!stack.empty()) {
+    const DepartmentNode* n = stack.back();
+    stack.pop_back();
+    out.push_back(n->name);
+    for (size_t i = 0; i <  n->children.size(); ++i)
+      stack.push_back(n->children[i]);
+  }
+  std::reverse(out.begin(), out.end());
+  return out;
+  
+}
+// level order traversal with queue
+std::vector<std::string> DepartmentTree::levelOrder() const {
+  std::vector<std::string> out;
+  if (root_ == nullptr) return out;
+  std::queue<const DepartmentNode*> q;
+  q.push(root_);
+  while (!q.empty()) {
+    const DepartmentNode* n = q.front();
+    q.pop();
+    out.push_back(n->name);
+    for (size_t i = 0; i < n->children.size(); ++i)
+      q.push(n->children[i]);
+  }
+  return out; 
+}
+
 //indented hierarchy with four spaces for each depth level
 //preorder
 void DepartmentTree::printHierarchy(std::ostream& out) const {
@@ -161,5 +196,20 @@ void DepartmentTree::printHierarchy(std::ostream& out) const {
   for (size_t i = 0; i < nodes.size(); ++i) {
     out << std::string(static_cast<size_t>(nodes[i]->depth) * 4, ' ') << nodes[i]->name << "\n";
   }
+}
+//number of departments with no children
+int DepartmentTree::countLeaves() const {
+  int leaves = 0;
+  for (size_t i = 0; i < nodes_.size(); ++i)
+    if (nodes_[i]->children.empty()) ++ leaves;
+  return leaves;
+}
+//maximum dpeth
+//0 for root only and -1 for empty tree
+int DepartmentTree::height() const {
+  int h = -1;
+  for (size_t i = 0; i < nodes_.size(); ++i)
+    if (nodes_[i]->depth > h) h = nodes_[i]->depth;
+  return h;
 }
     
