@@ -10,5 +10,8 @@ void menuAddDepartment(DepartmentTree& tree);
 void menuSearchDepartment(const DepartmentTree& tree);
 void menuDisplayHierarchy(const DepartmentTree& tree);
 void menuPreorder(const DepartmentTree& tree);
+void menuPostorder(const DepartmentTree& tree);
+void menuLevelOrder(const DepartmentTree& tree);
+void menuDepartmentStatistics(const DepartmentTree& tree);
 
 #endif //DEPARTMENT_MENU_H
