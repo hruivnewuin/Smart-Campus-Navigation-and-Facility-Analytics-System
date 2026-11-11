@@ -44,7 +44,7 @@ public:
   bool addRoot(const std::string& name, std::string& error);
   //matched ignoring case
   //will add a child if theres an existing parent
-  bool addChild(const std::string& name, const std::string& parentName, std::string & error);
+  bool addChild(const std::string& name, const std::string& parentName, std::string& error);
   //find department by name while ignoring case, if missing then nullptr
   const DepartmentNode* find(const std::string& name) const;
   //filling info for a departemnt
@@ -54,12 +54,18 @@ public:
   //loads departments.txt
   //full path to open
   DepartmentLoadResult loadFromFile(const std::string& path, const std::string& displayName);
-  //preorder traversal returns the department names
+  // traversals returns the department names
   //insertion order for visiting siblings
+  //level order uses queue
   std::vector<std::string> preorder() const;
+  std::vector<std::string> postorder() const;
+  std::vector<std::string> levelOrder() const;
   //print hierachy in preorder
   //will use four indentation spaces for each line
   void printHierarchy(std::ostream& out) const;
+  //height() is -1 for empty trees
+  int countLeaves() const;
+  int height() const;
 
 private:
   DepartmentNode* root_;
