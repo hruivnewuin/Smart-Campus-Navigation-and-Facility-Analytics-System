@@ -21,3 +21,6 @@ When it becomes root its parent is called as "NONE."
 Every department after has to name a parent from an earlier line, and its name has to be unique. 
 If a line breaks a rule then it is rejected and given a warning display that shows filename, line number, and reason.
 In the case a tree is empty, the menu goes on and creates a root without asking for a parent.
+
+GRAPH SECTION
+adjacency list choice and BFS(to be documented)
