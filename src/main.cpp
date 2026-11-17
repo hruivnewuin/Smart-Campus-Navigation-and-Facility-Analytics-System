@@ -65,7 +65,7 @@ static void printMenu() {
   std::cout << "7. Search department" << std::endl;
   std::cout << "8. Display department hierarchy" << std::endl;
   std::cout << "9. Run preorder traversal" << std::endl;
-  std::cout << "10. Exit" << std::endl;
+  std::cout << "0. Exit" << std::endl;
   std::cout << "Enter choice: ";
 }
 
@@ -108,7 +108,7 @@ int main(int argc, char* argv[]) {
 
     std::string trimmedInput = FacilityManager::trim(input);
     if (trimmedInput.empty()) {
-      std::cout << "Invalid choice: input cannot be blank. Please enter a number (1-10)."
+      std::cout << "Invalid choice: input cannot be blank. Please enter a number (0-9)."
                 << std::endl;
       continue;
     }
@@ -118,12 +118,12 @@ int main(int argc, char* argv[]) {
     long choice = std::strtol(trimmedInput.c_str(), &endPtr, 10);
     if (*endPtr != '\0') {
       std::cout << "Invalid choice: '" << trimmedInput
-                << "' is not a valid integer. Please enter a number (1-10)." << std::endl;
+                << "' is not a valid integer. Please enter a number (0-9)." << std::endl;
       continue;
     }
 
 // Support both 10 (README menu) and 0 (UI-7 exit option)
-    if (choice == 10 || choice == 0) {
+    if (choice == 0 || choice == 0) {
       std::cout << "Exiting program. Goodbye!" << std::endl;
       break;
     }
@@ -154,7 +154,7 @@ int main(int argc, char* argv[]) {
         break;
       default:
         std::cout << "Invalid choice: " << choice
-                  << " is out of range. Please select 1-10." << std::endl;
+                  << " is out of range. Please select 0-9." << std::endl;
         break;
     }
   }
