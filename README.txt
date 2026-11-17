@@ -46,7 +46,7 @@ The program loads data/ files, then presents a menu driven interface:
 7. Search department
 8. Display department hierarchy
 9. Run preorder traversal
-10. Exit
+0. Exit
 
 
 
