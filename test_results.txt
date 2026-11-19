@@ -59,9 +59,9 @@ Actual result: "Added 'UNiversity' as the root department.". There was no parent
 Pass or Fail: Pass
 
 Test number: 11 (under 10.4) - root-only tree
-Input: 
-Expected result: 
-Actual result: D
+Input: ./campus testdata/tree_root_only 
+Expected result: hierarchy is one line, parent is None, and 0 children, depth 0
+Actual result: "University" with Parent: None / Direct children: 0 / Depth: 0
 Pass or Fail: Pass
 
 Test number: 12 (under 10.4) - searches for the root
@@ -70,55 +70,55 @@ Expected result: get name, parent None, 2 children, depth 0
 Actual result: Department: University / Parent: None / Direct children: 2 / Depth: 0
 Pass or Fail: Pass
 
-Test number: 13 (under 10.4) - a non-root
-Input: 
-Expected result: 
-Actual result: 
+Test number: 13 (under 10.4) - searches a non-root
+Input: Search depart -> "  physics  "
+Expected result: get "Physics", parent is "College of SCience", 0 children, depth 2
+Actual result: Physics / Parent: College of Science / Direct children: 0 / Depth: 2 
 Pass or Fail: Pass
 
-Test number: 14 (under 10.4) - a missing department
-Input: 
-Expected result: 
-Actual result: 
+Test number: 14 (under 10.4) - searches a missing department
+Input: Search department -> Zoology
+Expected result: not-found message then back to menu
+Actual result: Department 'Zoology' not found.
 Pass or Fail: Pass
 
 Test number: 15 (under 10.4) - adding with an unknown parent
+Input: ./campus testdata/tree_empty then Add department -> University
+Expected result: becomes root and no parent prompt
+Actual result: "Added 'University' as the root department." Then a no parent prompt, a second add than asked for parent and added Science under University
+Pass or Fail: Pass
+
+Test number: 16 (under 10.4) - adding a duplicate
+Input: Add department -> physics, University
+Expected result: got duplicate error and the tree was unchanged
+Actual result: "Error: duplicate department name 'physics'. Tree unchanged."
+Pass or Fail: Pass
+
+Test number: 17 (under 10.4) - preorder traversal
+Input: 
+Expected result: University, College of Engineering, COmputer Science, Electrical Engineering, College of Science, Mathematics, Physics
+Actual result: comes out the same with no indents
+Pass or Fail: Pass
+
+Test number: 18 (under 10.4) - Invalid menu input
 Input: 
 Expected result: 
 Actual result: 
 Pass or Fail: Pass
 
-Test number: 15 (under 10.4) - adding a duplicate
+Test number: 19 (under 10.4) - text at numeric prompts
 Input: 
 Expected result: 
 Actual result: 
 Pass or Fail: Pass
 
-Test number: 16 (under 10.4) - preorder traversal
+Test number: 20 (under 10.4) - names containing spaces
 Input: 
 Expected result: 
 Actual result: 
 Pass or Fail: Pass
 
-Test number: 17 (under 10.4) - Invalid menu input
-Input: 
-Expected result: 
-Actual result: 
-Pass or Fail: Pass
-
-Test number: 18 (under 10.4) - text at numeric prompts
-Input: 
-Expected result: 
-Actual result: 
-Pass or Fail: Pass
-
-Test number: 19 (under 10.4) - names containing spaces
-Input: 
-Expected result: 
-Actual result: 
-Pass or Fail: Pass
-
-Test number: 20 (under 10.4) - blank names
+Test number: 21 (under 10.4) - blank names
 Input: 
 Expected result: 
 Actual result: 
@@ -132,32 +132,32 @@ Pass or Fail: Pass
 
 Test number: 22 (under 10.4) - Postorder traversal
 Input: 
-Expected result: 
-Actual result: 
+Expected result: Computer Science, Electrical Engineering, College of Engineering, Mathematics, Physics, College of Science, University
+Actual result: same result
 Pass or Fail: Pass
 
 Test number: 23 (under 10.4) - level-order traversal
 Input: 
-Expected result: 
-Actual result: 
+Expected result: University, College of Engineering, College of Science, Computer Science, Electrical Engineering, Mathematics, Physics
+Actual result: same thing
 Pass or Fail: Pass
 
 Test number: 24 (under 10.4) - department statistics for an empty tree
 Input: 
-Expected result: 
-Actual result: 
+Expected result: "No departments are loaded." total 0, leaves 0, height N/A
+Actual result: same thing
 Pass or Fail: Pass
 
 Test number: 25 (under 10.4) - department statistics for a root-only tree
 Input: 
-Expected result: 
-Actual result: 
+Expected result: total 1, leaves 1, height 0
+Actual result: 1 / 1 / 0
 Pass or Fail: Pass
 
 Test number: 26 (under 10.4) - department statistics for the sample tree
 Input: 
-Expected result: 
-Actual result: 
+Expected result: total 7, leaves 4, height 2
+Actual result:  Total departments: 7 / Leaf departments: 4 / Tree height: 2
 Pass or Fail: Pass
 
 
