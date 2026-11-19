@@ -91,7 +91,7 @@ void menuLevelOrder(const DepartmentTree& tree) {
 
 void menuDepartmentStatistics(const DepartmentTree& tree) {
   if (tree.isEmpty()) {
-    std::cout << "No departments are loaded.\n" << "Total departments: 0\n" << "Leaf departments: 0\n" << "Tree height: n/a\n";
+    std::cout << "No departments are loaded.\n" << "Total departments: 0\n" << "Leaf departments: 0\n" << "Tree height: N/A\n";
     return;
   }
   std::cout << "Total departments: " << tree.size() << "\n" << "Leaf departments: " << tree.countLeaves() << "\n" << "Tree height: " << tree.height() << "\n";
