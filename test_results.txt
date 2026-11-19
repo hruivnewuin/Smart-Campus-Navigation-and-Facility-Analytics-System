@@ -1,1 +1,102 @@
+Test number: 1 (under 10.1) - Valid records, blank lines, comment lines, and records with too few or too many fields. 
+Input: ./campus
+Expected result: departments.txt: 7 expected, 0 rejected
+Actual result: departments.txt: 7 expected, 0 rejected
+Pass or Fail: Pass
+
+Test number: 2 (under 10.1) - A missing file.
+Input: ./campus testdata/dept_test
+Expected result: 10 accepted, 9 rejected; blank line and both comment lines where skipped, output warnings with filename, line number, and the reason why
+Actual result: "departments.txt: 10 expected, 9 rejected". Line 16 "expected two fields..found 1", Line 17 "...found 3". And blank/comment lines produced no warning.
+Pass or Fail: Pass
+
+Test number: 3 (under 10.1) - A missing file.
+Input: ./campus testdata/test_missing_file
+Expected result: output error naming departs.txt, treated as empty with no crashes
+Actual result: "Error: could not open departments.txt - treating it as empty." with "0 accepted, 0 rejected". The code/program ran while going through hierarchy and showing " No departments are loaded".
+Pass or Fail: Pass
+
+Test number: 4 (under 10.1) - Duplicate building names that differ only by capitalization, and duplicate facility IDs that differ only by capitalization.
+Input: ./campus testdata/test_missing_file
+Expected result: output error naming departs.txt, treated as empty with no crashes
+Actual result: "Error: could not open departments.txt - treating it as empty." with "0 accepted, 0 rejected". The code/program ran while going through hierarchy and showing " No departments are loaded".
+Pass or Fail: Pass
+
+Test number: 5 (under 10.1) - Unknown building references (in connections and in facilities), duplicate and reversed connections, and unknown department parents.
+Input: ./campus testdata/dept_test (line 16 Robotics|Mechanical Engineering)
+Expected result: rejecting with the unknown parent named
+Actual result: line 15: unknow parent 'Mechanical Engineering' ...record rejected
+Pass or Fail: Pass
+
+Test number: 6 (under 10.1) - Empty files, empty required fields, self-connections, and duplicate department names that differ by capitalization: checking for empty files
+Input: ./campus testdata/tree_empty
+Expected result: 0 accepted, 0 rejected with empty tree messages
+Actual result: "departments.txt: 0 accepted, 0 rejected". All the traversals showed "No departments are loaded."
+Pass or Fail: Pass
+
+Test number: 7 (under 10.1) - Empty files, empty required fields, self-connections, and duplicate department names that differ by capitalization: checking for empty required fields
+Input: ./campus testdata/dept_test (line 18 "|University" and line 19 "Chemistry|")
+Expected result: both are jected as empty required field
+Actual result: line 18 and line 19: "empty required field...record rejected"
+Pass or Fail: Pass
+
+Test number: 8 (under 10.1) - Empty files, empty required fields, self-connections, and duplicate department names that differ by capitalization: checking for duplicate department names that differ by capitalization
+Input: ./campus testdata/dept_test (line 13 PHYSICS after Physics)
+Expected result: rejected and keeping the first "Physics"
+Actual result: line 13: "PHYSICS" was rejected and hierarchy shows " Physics"
+Pass or Fail: Pass
+
+Test number: 9 (under 10.1) - A file with Windows line endings, extra whitespace around fields, a lowercase ID in a data file, and a # inside a name.
+Input: ./campus testdata/dept_test (using "  University  |  NONE  ", C | UNIVERSITY", "Room #5 Studies", "History  of    Art")
+Expected result: all are accepted, # is kept in "Room #5 Studies", and spaces are kept "History  of    Art", the spelling are kept "college of science".
+Actual result: all accepted and hierarchy shows "Room #5 Studies", the spaces of "History  of    Art" are kept, and the lowercase "college of science" spelling is unchanged
+Pass or Fail: Pass
+
+Test number: 10 (under 10.4) - Empty tree (adding the root without a parent prompt)
+Input: ./campus testdata/tree_empty    (with Add department -> University)
+Expected result: It will become root and there's no parent prompt
+Actual result: "Added 'UNiversity' as the root department.". There was no parent prompt and then a second add asked for a parent and added Science under University.
+Pass or Fail: Pass
+
+Test number: 11 (under 10.4) - root-only tree
+Input: 
+Expected result: 
+Actual result: D
+Pass or Fail: Pass
+
+Test number: 12 (under 10.4) - searches for the root
+Input: Search department -> University  (data/)
+Expected result: get name, parent None, 2 children, depth 0
+Actual result: Department: University / Parent: None / Direct children: 2 / Depth: 0
+Pass or Fail: Pass
+
+Test number: 13 (under 10.4) - a non-root
+Input: 
+Expected result: 
+Actual result: 
+Pass or Fail: Pass
+
+Test number: 14 (under 10.4) - a missing department
+Input: 
+Expected result: 
+Actual result: 
+Pass or Fail: Pass
+
+Test number: 15 (under 10.4) - adding with an unknown parent
+Input: 
+Expected result: 
+Actual result: 
+Pass or Fail: Pass
+
+Test number: 15 (under 10.4) - adding a duplicate
+Input: 
+Expected result: 
+Actual result: 
+Pass or Fail: Pass
+
+Test number: 16 (under 10.4) - preorder traversal
+Input: 
+Expected result: 
+Actual result: 
+Pass or Fail: Pass
 
