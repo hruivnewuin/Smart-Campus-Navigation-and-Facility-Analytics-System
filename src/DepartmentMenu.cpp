@@ -86,7 +86,7 @@ void menuPostorder(const DepartmentTree& tree) {
 
 //level order sequence
 void menuLevelOrder(const DepartmentTree& tree) {
-  printSequence("Level Order traversal", tree.LevelOrder());
+  printSequence("Level Order traversal", tree.levelOrder());
 }
 
 void menuDepartmentStatistics(const DepartmentTree& tree) {
